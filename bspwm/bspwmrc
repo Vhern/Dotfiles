@@ -28,9 +28,10 @@ bspc config presel_feedback_color       "#BF616A"
 # bspc rule -a Chromium desktop='^2'
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Screenkey manage=off
-bspc rule -a Vlc state=floating center=true
-bspc rule -a Surf state=floating center=true
-bspc rule -a Xfce4-settings-manager state=floating center=true
+bspc rule -a Vlc border=off state=floating center=true
+bspc rule -a Surf border=off state=floating center=true
+bspc rule -a Xfce4-settings-manager border=off state=floating center=true
 bspc rule -a deepin-calculator state=floating border=off center=true
+bspc rule -a "Free Download Manager" state=floating border=off center=true
 
 bspc config external_rules_command $(dirname $0)/external_rules
