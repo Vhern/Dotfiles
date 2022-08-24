@@ -3,6 +3,9 @@
 # Kill all so can be restarted
 killall -9 xfce4-power-manager polybar picom numlockx nitrogen unclutter nm-applet
 
+# Make sxhkd reload its configuration files
+pkill -USR1 -x sxhkd
+
 # Start Hotkey Daemon
 pidof sxhkd || sxhkd &
 
@@ -26,7 +29,7 @@ $HOME/.config/bspwm/polybar/launchbar.sh &
 
 # Compositor
 #xfwm4 &
-picom --config $HOME/.config/i3/picom.conf &
+picom --config $HOME/.config/bspwm/picom.conf &
 
 # Numlock always on
 numlockx &
