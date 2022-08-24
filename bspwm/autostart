@@ -29,7 +29,7 @@ $HOME/.config/bspwm/polybar/launchbar.sh &
 
 # Compositor
 #xfwm4 &
-picom --config $HOME/.config/bspwm/picom.conf &
+picom --experimental-backends --transparent-clipping --config $HOME/.config/bspwm/picom.conf &
 
 # Numlock always on
 numlockx &
@@ -43,9 +43,6 @@ unclutter --hide-on-touch &
 
 # Network Manager tray icon
 nm-applet &
-
-# Tabs support
-#tabbed &
 
 # replace neovim colorscheme
 sed -i "s/theme =.*$/theme = \"nord\",/g" $HOME/.config/nvim/lua/custom/chadrc.lua &
