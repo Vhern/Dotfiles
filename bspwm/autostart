@@ -13,7 +13,7 @@ pidof sxhkd || sxhkd &
 pidof xfsettingsd || xfsettingsd &
 
 # Notification Daemon
-pidof dunst || dunst -config $HOME/.config/i3/dunstrc &
+pidof dunst || dunst -config $HOME/.config/bspwm/dunstrc &
 
 # Polkit
 pidof /usr/lib/xfce-polkit/xfce-polkit || /usr/lib/xfce-polkit/xfce-polkit &
