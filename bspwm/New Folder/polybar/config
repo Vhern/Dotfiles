@@ -4,7 +4,7 @@
 margin-bottom = 0
 margin-top = 0
 
-include-file = ~/.config/bspwm/polybar/colors-vibrant
+include-file = ~/.config/bspwm/polybar/colors
 include-file = ~/.config/bspwm/polybar/modules
 include-file = ~/.config/bspwm/polybar/decor
 include-file = ~/.config/bspwm/polybar/system

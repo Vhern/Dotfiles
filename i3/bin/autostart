@@ -5,7 +5,7 @@
 exec_always --no-startup-id nitrogen --restore
 
 # polybar
-exec_always --no-startup-id  $HOME/.config/i3/bin/launchbar.sh
+exec_always --no-startup-id  $(dirname $0)/launchbar.sh
 
 # Fix cursor
 exec_always --no-startup-id  xsetroot -cursor_name left_ptr

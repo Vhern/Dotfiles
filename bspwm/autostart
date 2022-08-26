@@ -13,7 +13,7 @@ pidof sxhkd || sxhkd &
 pidof xfsettingsd || xfsettingsd &
 
 # Notification Daemon
-pidof dunst || dunst -config $HOME/.config/bspwm/dunstrc &
+pidof dunst || dunst -config $(dirname $0)/dunstrc-vibrant &
 
 # Polkit
 pidof /usr/lib/xfce-polkit/xfce-polkit || /usr/lib/xfce-polkit/xfce-polkit &
@@ -25,11 +25,11 @@ xfce4-power-manager &
 xsetroot -cursor_name left_ptr &
 
 # Bar
-$HOME/.config/bspwm/polybar/launchbar.sh &
+$(dirname $0)/polybar/launchbar.sh &
 
 # Compositor
 #xfwm4 &
-picom --config $HOME/.config/bspwm/picom.conf &
+picom --config $(dirname $0)/picom.conf &
 
 # Numlock always on
 numlockx &
