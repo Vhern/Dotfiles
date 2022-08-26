@@ -1,16 +1,16 @@
 [module/workspaces1]
 type = internal/bspwm
 
+
 pin-workspaces = true
-strip-wsnumbers = true
-index-sort = true
+inline-mode = false
 
 enable-click = true
 enable-scroll = true
-wrapping-scroll = false
-reverse-scroll = false
+reverse-scroll = true
 
 fuzzy-match = true
+
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
@@ -23,28 +23,40 @@ ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
 
-format = <label-state><label-mode>
+format = <label-state>
+format-font = 2
+
+
+label-monitor = %icon%
 
 label-focused = %icon%
 label-focused-foreground = ${color.blue}
-label-focused-background = ${color.altblack}
+label-focused-background = ${color.background}
+label-focused-underline =  ${color.blue}
+label-focused-padding = 1
+
+label-occupied = %icon%
+label-occupied-foreground = ${color.green}
+label-occupied-background = ${color.background}
+;label-occupied-underline = 
+label-occupied-padding = 1
 
 label-urgent = %icon%
 label-urgent-foreground = ${color.red}
-label-urgent-background = ${color.altblack}
-
-label-occupied = %icon%
-label-occupied-foreground = ${color.foreground}
-label-occupied-background = ${color.altblack}
+label-urgent-background = ${color.background}
+label-urgent-underline =  ${color.red}
+label-urgent-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = ${color.foreground-dimmed}
-label-empty-background = ${color.altblack}
-
-label-focused-padding = 1
-label-urgent-padding = 1
-label-occupied-padding = 1
+label-empty-foreground = ${color.foreground}
+label-empty-background = ${color.background}
 label-empty-padding = 1
+
+; Separator in between workspaces
+label-separator = "∙"
+label-separator-padding = 0
+label-separator-foreground = ${color.altblack} 
+label-separator-background = ${color.background} 
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -69,19 +81,25 @@ format = <label-state><label-mode>
 
 label-focused = %icon%
 label-focused-foreground = ${color.blue}
-label-focused-background = ${color.altblack}
+label-focused-background = ${color.background}
+label-focused-underline = ${color.blue}
 
 label-urgent = %icon%
 label-urgent-foreground = ${color.red}
-label-urgent-background = ${color.altblack}
+label-urgent-background = ${color.background}
+label-urgent-underline = ${color.red}
 
 label-occupied = %icon%
 label-occupied-foreground = ${color.foreground}
-label-occupied-background = ${color.altblack}
+label-occupied-background = ${color.background}
+label-occupied-underline = ${color.foreground}
 
 label-empty = %icon%
 label-empty-foreground = ${color.foreground}
-label-empty-background = ${color.altblack}
+label-empty-background = ${color.background}
+label-empty-underline = ${color.foreground}
+
+label-separator-foreground = ${color.altblack}
 
 label-focused-padding = 1
 label-urgent-padding = 1

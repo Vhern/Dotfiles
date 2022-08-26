@@ -12,7 +12,7 @@ content-foreground = ${color.transparent}
 
 [module/dot]
 type = custom/text
-;content = 
+;content = ""
 content = ""
 
 content-font = 3
@@ -26,13 +26,13 @@ content-padding = 1
 type = custom/text
 content = "%{T3}%{T-}"
 content-background = ${color.transparent}
-content-foreground = ${color.altblack}
+content-foreground = ${color.background}
 
 [module/RD]
 type = custom/text
 content = "%{T3}%{T-}"
 content-background = ${color.transparent}
-content-foreground = ${color.altblack}
+content-foreground = ${color.background}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
