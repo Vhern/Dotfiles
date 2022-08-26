@@ -1,0 +1,7 @@
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/NvChad/NvChad
+
+[submodule "polybar-scripts"]
+	path = polybar-scripts
+	url = https://github.com/polybar/polybar-scripts.git
