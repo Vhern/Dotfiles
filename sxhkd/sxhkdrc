@@ -9,6 +9,9 @@ super + Return
 # program launcher
 super + @space
 	def-dmenu
+	#rofi -modi drun -show drun -line-padding 4 \
+		-columns 2 -padding 50 -hide-scrollbar -terminal terminal \
+		-show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 12"
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -76,7 +79,7 @@ super + shift + c
         color-gpick
 
 # Task Manager
-ctrl + shift + escape 
+ctrl + shift + Escape 
         xfce4-taskmanager
 
 # Pulse Audio ctrls
@@ -92,15 +95,15 @@ ctrl + shift + escape
         playerctl {play-pause, play-pause, next, previous}
 
 # screenshot
-print 
+Print 
         takeshot --now
 
 # screenshot active window
-ctrl + print 
+ctrl + Print 
         takeshot --win
 
 # screenshot selected area
-ctrl + shift + print 
+ctrl + shift + Print 
         takeshot --area
 
 # Calculator

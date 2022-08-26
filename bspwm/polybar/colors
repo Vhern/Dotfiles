@@ -1,6 +1,7 @@
 [color]
 
-transparent = #00000000
+#transparent = #00000000
+transparent = #2D3340
 background = #2D3340
 foreground = #D8DEE9
 foreground-dimmed = #818998

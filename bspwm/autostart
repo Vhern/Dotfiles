@@ -22,14 +22,14 @@ pidof /usr/lib/xfce-polkit/xfce-polkit || /usr/lib/xfce-polkit/xfce-polkit &
 xfce4-power-manager &
 
 # Fix cursor
-#xsetroot -cursor_name left_ptr &
+xsetroot -cursor_name left_ptr &
 
 # Bar
 $HOME/.config/bspwm/polybar/launchbar.sh &
 
 # Compositor
 #xfwm4 &
-picom --experimental-backends --transparent-clipping --config $HOME/.config/bspwm/picom.conf &
+picom --config $HOME/.config/bspwm/picom.conf &
 
 # Numlock always on
 numlockx &
@@ -38,7 +38,7 @@ numlockx &
 nitrogen --restore &
 #feh --bg-scale <path-to-wallpaper> &
 
-# Auto hide mouse, this is not official unclutter, is unclutter-xfixes-git from the aur, that add the touch support
+# Auto hide mouse, this is not official unclutter, is unclutter-xfixes-git from the aur, that adds the touch support
 unclutter --hide-on-touch &
 
 # Network Manager tray icon
