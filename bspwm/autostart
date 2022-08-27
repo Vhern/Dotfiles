@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Kill all so can be restarted
-killall -9 xfce4-power-manager polybar picom numlockx nitrogen unclutter nm-applet
+killall -9 xfce4-power-manager polybar picom numlockx nitrogen unclutter nm-applet;
 
 # Start Hotkey Daemon
 pidof sxhkd || sxhkd &
@@ -14,6 +14,9 @@ pidof xfsettingsd || xfsettingsd &
 
 # Notification Daemon
 pidof dunst || dunst -config $(dirname $0)/dunstrc-vibrant &
+
+# Set lock command
+#pidof xss-lock || xss-lock -- lock &
 
 # Polkit
 pidof /usr/lib/xfce-polkit/xfce-polkit || /usr/lib/xfce-polkit/xfce-polkit &
@@ -29,7 +32,7 @@ $(dirname $0)/polybar/launchbar.sh &
 
 # Compositor
 #xfwm4 &
-picom --config $(dirname $0)/picom.conf &
+picom &
 
 # Numlock always on
 numlockx &

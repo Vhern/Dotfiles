@@ -29,7 +29,7 @@ exec_always --no-startup-id  dunst -config $HOME/.config/i3/dunstrc
 exec_always --no-startup-id  xfce4-power-manager
 
 exec_always --no-startup-id  while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
-exec_always --no-startup-id  picom --config $HOME/.config/i3/picom.conf
+exec_always --no-startup-id  picom
 
 # start polkit
 exec_always --no-startup-id  "if [[ ! `pidof xfce-polkit` ]]; then
