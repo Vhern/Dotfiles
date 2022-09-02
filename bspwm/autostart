@@ -28,7 +28,8 @@ xfce4-power-manager &
 xsetroot -cursor_name left_ptr &
 
 # Bar
-$(dirname $0)/polybar/launchbar.sh &
+$HOME/.config/polybar/launch.sh --cuts-single &
+# $(dirname $0)/polybar/launchbar.sh &
 
 # Compositor
 #xfwm4 &
