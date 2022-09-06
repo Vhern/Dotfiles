@@ -50,7 +50,7 @@ bspc config active_border_color         "#444b6a"
 bspc rule -a Spotify desktop='^5' # Not working for Spotify
 
 # floating windows
-declare -a floats=(deepin-calculator 'Free Download Manager' Xfce4-settings-manager Surf vlc Pavucontrol)
+declare -a floats=(deepin-calculator 'Free Download Manager' Xfce4-settings-manager Surf vlc Pavucontrol Blueberry.py)
 for i in ${floats[@]}; do
   bspc rule -a $i state=floating border=off center=true; done
 
