@@ -1,22 +1,21 @@
 #!/bin/sh
 
 # Kill all so can be restarted
-killall -9 xfce4-power-manager polybar picom numlockx nitrogen unclutter nm-applet;
+killall -9 xfce4-power-manager polybar picom numlockx nitrogen unclutter;
+
+# Kill all Tray Icons
+killall -9 blueberry-tray nm-applet xfce4-clipman xfce4-notes;
 
 # Start Hotkey Daemon
 pidof sxhkd || sxhkd &
 
-# Make sxhkd reload its configuration files
-#pkill -USR1 -x sxhkd &
+# XFCE4 Stuff ===================================================================
 
-# XFCE4 Settings Daemon
+# Settings Daemon
 pidof xfsettingsd || xfsettingsd &
 
 # Notification Daemon
-pidof dunst || dunst -config $(dirname $0)/dunstrc-vibrant &
-
-# Set lock command
-#pidof xss-lock || xss-lock -- lock &
+pidof /usr/lib/xfce4/notifyd/xfce4-notifyd || /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 # Polkit
 pidof /usr/lib/xfce-polkit/xfce-polkit || /usr/lib/xfce-polkit/xfce-polkit &
@@ -24,15 +23,37 @@ pidof /usr/lib/xfce-polkit/xfce-polkit || /usr/lib/xfce-polkit/xfce-polkit &
 # Power Management
 xfce4-power-manager &
 
+# ===============================================================================
+
+# Tray Icons ===================================================================
+
+# Bluetooth
+blueberry-tray &
+
+# Network Manager
+nm-applet &
+
+# Clipboard Manager
+#xfce4-clipman &
+
+# Notes
+#xfce4-notes &
+
+# ===============================================================================
+
+# Bluetooth OBEX Agent (Allows to receive files via Bluetooth)
+/usr/lib/blueberry/blueberry-obex-agent.py &
+
 # Fix cursor
 xsetroot -cursor_name left_ptr &
 
+# Touchpad Gestures Support
+/usr/bin/libinput-gestures &
+
 # Bar
 $HOME/.config/polybar/launch.sh --cuts-single &
-# $(dirname $0)/polybar/launchbar.sh &
 
 # Compositor
-#xfwm4 &
 picom &
 
 # Numlock always on
@@ -40,13 +61,9 @@ numlockx &
 
 # Wallpaper
 nitrogen --restore &
-#feh --bg-scale <path-to-wallpaper> &
 
 # Auto hide mouse, this is not official unclutter, is unclutter-xfixes-git from the aur, that adds the touch support
 unclutter --hide-on-touch &
-
-# Network Manager tray icon
-nm-applet &
 
 # replace neovim colorscheme
 sed -i "s/theme =.*$/theme = \"nord\",/g" $HOME/.config/nvim/lua/custom/chadrc.lua &
